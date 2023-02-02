@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/레이아웃 만들기 숙제.css">
+</head>
+<body>
+<div class="main">
+    <div>
+        <ul class="navbar"style="text-align:left; padding-left:0px">
+            <li><a href="#">영화</a></li>
+            <li><a href="#">맛집</a></li>
+            <li><a href="#">IT</a></li>
+            <li><a href="#">컴퓨터</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="left-blogcontent">
+            <div>
+                <img src="profile-icon.png" class="blog-profile">
+                <div class="blog-name">
+                    <p style="margin:8px; font-weight:900;">이름</p>
+                    <p style="margin:8px;">날짜</p>
+                </div>
+            </div>
+            <!-- float을 썼다면 clear:both 전용 <div>태그 생성해주는것 추천 -->
+            <div style="clear:both;"></div>
+            <div>
+                <h4 style="margin-top: 20px;">블로그 글</h4>
+                <p>가성비 맛집 발견!!</p>
+            </div>
+        </div>
+        <div class="right-image">
+            <img src="./img/nature.jpg" alt="자연" style="width: 100%; height: 100%;">
+        </div>
+    </div>
+</div>
+</body>
+</html>

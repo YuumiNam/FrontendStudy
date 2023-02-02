@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/레이아웃 만들기02.css">
+</head>
+<body>
+    <!-- display:inline-block "내 크기만큼 차지하게해주세요~" -->
+    <!-- display:block "한 행을 전부 차지하게 해주세요~" -->
+    <!-- 비교) float:left "위에 떠있게 해주세요~" -->
+    <div class="container">
+        
+        <div class="header"></div>
+        
+        <!-- <div>태그 사이를 띄어쓰기 하면 빈공간이 생기는데?? -->
+        <!-- 부모태그에 font-size:0px를 해주던지 -->
+        <!-- 사이를 주석처리해주던지-->
+        <!-- 그냥 float써 -->
+        <div class="left-menu"></div><!--   
+        --><div class="right-contents">
+            <!-- inline-blick을 쓴 상태에서 주변에 글이 있으면 가끔 이상해짐 -->
+            <!-- vertical-align:top;을 주면 괜찮아짐 -->
+            <p>안녕하세요</p>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+</html>

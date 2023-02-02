@@ -1,0 +1,67 @@
+.header {
+    width: 100%;
+    height: 200px;
+}
+
+.pc-menu {
+    width: 70%;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: pink; */
+}
+
+.menu {
+    width: 100%;
+    height: 50%;
+    
+}
+
+.logo {
+    list-style-type: none;
+    float: left;
+    color: red;
+    font-size: 60px;
+    font-weight: bolder;
+    margin-top: 40px;
+}
+
+.my_list {
+    list-style-type: none;
+    float: right;
+    margin-top: 40px;
+}
+
+.gnb {
+    list-style-type: none;
+}
+
+li {
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.main-background {
+    width: 100%;
+    height: 500px;
+    background-image: url("background.jpg");
+    position: relative;
+}
+
+.main-contents {
+    width:600px;
+    position:absolute;
+    top: 100px;
+    left: 300px;
+}
+
+.main-background-title {
+    color:whitesmoke;
+    text-align: left;
+}
+
+.main-background-contents {
+    color:white;
+    text-align: left;
+}

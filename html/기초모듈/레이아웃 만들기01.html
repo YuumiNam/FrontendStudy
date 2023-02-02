@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/레이아웃 만들기01.css">
+</head>
+<body>
+    <!-- 레이아웃 전체를 감싸는 상자 -->
+    <div class="container">
+        <!-- header -->
+        <div class="header"></div>
+        <!-- 왼쪽 파란박스 -->
+        <div class="left-menu"></div>
+        <!-- 오른쪽 빨간박스 -->
+        <!-- left-menu의 <div>태그는 display:block을 내장하고있기때문에 가로행 전부를 차지하네?? -->
+        <!-- left-menu에 float 속성을 먹이면 "붕~ 뜬상태"로 있게되기때문에 가로행 전부를 차지안함! -->
+        <div class="right-contents"></div>
+        <!-- footer -->
+        <!-- left-menu와 right-menu가 float되어 있어서 안보임 -->
+        <!-- 이때 clear:both를 float다음에 오는 요소에게 주면 됨 -->
+        <div class="footer"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+/* 셀렉터의 우선순위
+style="" (1000점)
+#id (100점)
+.class (10점) 
+p (1점)
+*/
+
+
+/* class selector (적용 우선순위 10점)
+.은 class를 뜻한다.
+
+width 글자크기
+display:block; margin-left:auto; margin-right:auto; 이미지 가운데정렬
+*/
+.profile-icon {
+width:100px; 
+display:block; 
+margin-left:auto; 
+margin-right:auto;
+}
+
+
+.profile-name {
+    font-size:16px; 
+    font-family:'gulim'; 
+    color:blue; 
+    letter-spacing:5px; 
+    text-align:center;
+    font-weight: 900;
+}
+
+
+/* tag selector (적용 우선순위 1점)
+모든 <p>태그에 적용한다.
+*/
+p {
+    text-align: center;
+}
+
+
+/* id selector (적용 우선순위 100점)
+#은 id를 뜻한다.
+
+.class vs #id 어떤걸로 스타일을 넣어야...??
+요즘 추세는.class 추천!!!
+우선순위 - #id(100점) .class(10점)
+*/
+#special {
+    text-align: center;
+    color:black;
+}
+
+
+.content {
+    color:blue;
+}
+
+
+/*
+width 가로
+height 세로
+margin 바깥쪽 여백
+padding 안쪽 여백
+border 테두리
+border-redius 테두리 둥글게
+
+가운데정렬 <div>태그는 display:block을 기본으로 갖고있음
+(이미지 빼고는 지금배운것들은 다 기본으로 갖고있음)
+margin-left: auto;
+margin-right: auto;
+*/
+.box {
+    width: 200px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: cadetblue;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    box-shadow: 10px 10px black;
+}

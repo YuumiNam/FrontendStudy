@@ -1,0 +1,52 @@
+.main {
+    width: 700px;
+    height: 500px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.navbar li{
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+.navbar li a {
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.container {
+    width:700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-profile {
+    width:50px;
+    float:left;
+    margin: 10px;
+}
+
+.blog-name {
+    float: left;
+    margin: 0px;
+}
+
+
+.left-blogcontent {
+    width: 70%;
+    height: 200px;
+    background-color: #eee;
+    float: left;
+}
+
+.right-image {
+    width: 30%;
+    height: 200px;
+    background-color: yellow;
+    float: left;
+}
