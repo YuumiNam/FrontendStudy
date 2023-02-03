@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Alert.css">
+</head>
+<body>
+    <!-- UI 만드는 Step -->
+    <!-- 1. HTML&CSS로 미리 디자인 -->
+    <!-- 필요할 때 보여달라고 코드짜기 (자바스크립트로) -->
+    
+    <div class="alert-box" id="alert">알림창임</div>
+    <div class="alert-box" id="list">아이디or비번을 입력하세요</div>
+    <!-- onclick=""속성 -->
+    <!-- 버튼클릭시 ""안에 들어가는 코드를 실행시켜줌 -->
+    <button class="alert-button" onclick="alert('block')">열기</button>
+    <button class="alert-button" onclick="alert('none')">닫기</button>
+    <div>
+        <button class="alert-button" onclick="insert('아이디를 입력하세요')">버튼1</button>
+        <button class="alert-button" onclick="insert('비번을 입력하세요')">버튼2</button>
+    </div>
+
+
+
+    <!-- 조작할 HTML 밑에 <script>태그를 써야함 -->
+    <script>
+        // 위의 onclick=""안에 들어가는 코드가 너무 길어!!
+        // 기능들을 function으로 만들어준다음 쓸때 function이름만 불러주면 됨!
+        // 긴 코드를 재사용하기도 평함
+        // Java의 메소드와 비슷함
+
+
+        // function openAlert() {
+        //     document.getElementById('alert').style.display = 'block';
+        // }
+
+        // function closeAlert() {
+        //     document.getElementById('alert').style.display = 'none';
+        // }
+
+        
+
+        // 이렇게 함수() 안에 가변적인 부분에 파라미터를 넣어주면
+        // 함수 1개로 2종류의 코드 실행가능
+        function alert(파라미터) {
+            document.getElementById('alert').style.display = 파라미터;
+        }
+
+        function insert(파라미터) {
+            document.getElementById('list').style.display = 'block';
+            document.getElementById('list').innerHTML = 파라미터;
+        }
+    </script>
+</body>
+</html>

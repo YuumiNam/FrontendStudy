@@ -1,0 +1,24 @@
+.alert-box {
+    width: 20%;
+    background-color: skyblue;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+
+    /* 창을 평소에 숨기는법 */
+    display: none;
+}
+
+.alert-button {
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: skyblue;
+    color: white;
+    border: skyblue;
+    border-radius: 5px;
+}
+
+.insert-box {
+    display:none;
+}
