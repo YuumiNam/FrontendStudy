@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/09 숙제.css">
+</head>
+<body>
+<div class="shoppingcart-background">
+    <h1 style="color: #2E64FE; margin-top: 0;">Your shopping cart</h1>
+    <div class="shoppingcart-contents">
+        <table>
+            <thead>
+                <tr>
+                    <!-- colspan=""속성 -->
+                    <!-- 두개의 열을 합칠때 씀 -->
+                    <th colspan="2">ITEM</th>
+                    <th>AMOUNT</th>
+                    <th>PRICE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="./img/item1.png" alt="item01" width="80%"></td>
+                    <td>shoes</td>
+                    <td>1</td>
+                    <td>100.00</td>
+                    <td>100.00</td>
+                </tr>
+                <tr>
+                    <td><img src="./img/camera.jpg" alt="item02" width="100%"></td>
+                    <td>sony</td>
+                    <td>1</td>
+                    <td>989.00</td>
+                    <td>989.00</td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="text-align:right; border-bottom: 0px;">총가격 : 2968.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="margin-top:20px; margin-bottom: 30px;">
+        <span style="color: #2E64FE;">Edit your shpping cart</span>
+        <button class="shoppingcart-button">choose payment method</button>
+    </div>
+</div>
+</body>
+</html>

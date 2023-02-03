@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Table레이아웃과 vertical-align.css">
+</head>
+<body>
+<!-- 표 만들때에는 <table> -->
+<div>
+    <!-- 행 먼저, 그다음 열 -->
+    <table>
+        <!-- 행 <tr> table row -->
+        <!-- 열 <td> table data -->
+        <!-- 제목용 열 <th> -->
+        
+        <!-- 제목행은 <thead> 안에 -->
+        <thead>
+            <tr>
+                <th><p>1111</p><p>2222</p></th>
+                <!-- 글자 간 상하간격을 조정하고 싶을때 -->
+                <!-- vertical-align속성을 쓴다 -->
+                <td style="vertical-align: top;">2222</td>
+                <th>3333</th>
+            </tr>
+        </thead>
+        <!-- 일반 행은 <tbody> 안에 -->
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td>2</td>
+                <th>3</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

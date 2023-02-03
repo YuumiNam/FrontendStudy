@@ -1,0 +1,60 @@
+div {
+    box-sizing: border-box;
+}
+
+.shoppingcart-background {
+    width:100%;
+    max-width: 600px;
+    padding:30px;
+    background-color: #A9E2F3;
+}
+
+.shoppingcart-content td:nth-child(4) {
+    border-bottom: 0px;
+}
+
+.shoppingcart-contents td, .shoppingcart-contents th {
+    padding:10px;
+    border-bottom: 1px solid #A9E2F3;
+    text-align: center;
+}
+
+/* 특정 열만 width를 늘리고싶을때 */
+/* nth-child() */
+.shoppingcart-contents th:nth-child(2) {
+    width: 150px;
+}
+
+.shoppingcart-contents {
+    background-color: white;
+    border-radius: 5px;
+}
+
+.shoppingcart-button {
+    padding:15px;
+    font-size: 15px;
+    color: white;
+    border: 0px;
+    background-color: #0080FF;
+    border-radius: 5px;
+    float: right;
+
+    cursor: pointer;
+}
+
+/* (순서주의) (h)over -> (f)ocus -> (a)ctive */
+/* 마우스를 갖다댈때 바뀌는것 설정 */
+.shoppingcart-button:hover {
+    background-color: chocolate;
+}
+
+/* 마우스를 누르고 손을 뗐을때 바뀌는것 설정 */
+.shoppingcart-button:focus {
+    background-color: grey;
+}
+
+/* 마우스를 누를때 바뀌는것 설정 */
+.shoppingcart-button:active {
+    background-color: brown;
+    border:2px solid black;
+}

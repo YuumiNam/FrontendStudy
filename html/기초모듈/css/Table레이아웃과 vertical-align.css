@@ -1,0 +1,8 @@
+td, th {
+    border: 1px solid black;
+}
+
+/* <table>의 기본 틈을 없애줌 */
+table {
+    border-collapse: collapse;
+}
