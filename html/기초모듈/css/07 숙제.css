@@ -1,0 +1,44 @@
+/* 
+셀렉터에 콤마를 쓰면 여러개 동시 선택가능
+*/
+div, input, textarea {
+    box-sizing: border-box;
+}
+
+input[type=email], input[type=text], textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border:  1px solid black;
+    border-radius: 5px;
+}
+
+.form-background-black {
+    padding:30px;
+    background-color: grey;
+}
+
+.form-background-white {
+    width: 80%;
+    padding: 30px;
+    max-width: 600px;
+    background-color: white;
+    margin: auto;
+    position:relative;
+}
+
+
+.name {
+    width: 50%;
+    float: left;
+    padding: 10px;
+}
+
+.yellow-button {
+    padding:10px;
+    margin-left:auto;
+    color: skyblue;
+    border-radius: 5px;
+    border: 1px solid skyblue;
+    float: right;
+}

@@ -9,7 +9,6 @@ p (1점)
 /* class selector (적용 우선순위 10점)
 .은 class를 뜻한다.
 
-width 글자크기
 display:block; margin-left:auto; margin-right:auto; 이미지 가운데정렬
 */
 .profile-icon {

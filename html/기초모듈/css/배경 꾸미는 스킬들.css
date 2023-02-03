@@ -92,3 +92,18 @@
     */
     box-sizing: border-box;
 }
+
+.text-input {
+    padding: 10px;
+    font-size: 20px;
+    border:  2px solid black;
+    border-radius: 5px;
+}
+
+/* 
+"input중 type이 email인 것만 적용하게 해주세요~
+*/
+input[type=email] {
+    padding: 20px;
+    font-size: 20px;
+}
