@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/모달창과 애니메이션.css">
+</head>
+<body>
+    <!-- One-way UI 애니메이션 -->
+    <!-- 1. 시작스타일 -->
+    <!-- 2. 최종스타일 -->
+    <!-- 3. 원할 때 최종스타일로 변하라고 코드짜기 -->
+    <!-- 4. transition 추가 -->
+    <div class="black-bg">
+        <div class="white-bg">
+            <h2 style="margin-bottom: 0px;">로그인하세요</h2>
+            <form action="#">
+                <div class="my-3">
+                    <span><strong>ID : </strong></span>
+                    <input type="text" class="form-control" id="id" placeholder="아이디를 입력해주세요." style="width:77%;">
+                </div>
+                <div class="my-3">
+                    <span><strong>Password : </strong></span>
+                    <input type="text" placeholder="비밀번호를 입력해주세요." id="password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary" id="send">전송</button>
+                <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form>
+        </div>
+    </div>
+
+    <button class="btn" id="login-btn" style="color:black;">로그인</button>
+
+    <script>
+        document.getElementById('login-btn').addEventListener('click', function(){
+            if(document.getElementsByClassName('black-bg')[0].classList.contains('close-modal')) {
+                document.getElementsByClassName('black-bg')[0].classList.replace('close-modal', 'show-modal');
+            } else {
+                document.getElementsByClassName('black-bg')[0].classList.add('show-modal');
+            }
+        })
+    </script>
+
+    <script>
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementsByClassName('black-bg')[0].classList.replace('show-modal', 'close-modal');
+        })
+    </script>
+
+    <!-- 조건문 -->
+    <script>
+        document.getElementById('send').addEventListener('click', function(){
+            if(document.getElementById('id').value == '') {
+                alert('아이디입력안함');
+            }
+            if(document.getElementById('password').value == '') {
+                alert('비밀번호입력안함');
+            } else {
+                document.getElementsByClassName('black-bg')[0].classList.replace('show-modal', 'close-modal');
+            }
+        });
+    </script>
+
+    <!-- input과 change 이벤트 -->
+    <!-- input은 안에 글자에 변화가 일어날때마다 변화를 줌 -->
+    <!-- change는 input안에 글자를 다 치고 다른 곳을 클릭할때 변화를 줌 -->
+    <!-- <script>
+        document.getElementById('id').addEventListener('input', function() {
+
+        })
+    </script> -->
+</body>
+</html>

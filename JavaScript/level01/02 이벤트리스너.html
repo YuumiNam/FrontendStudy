@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/이벤트리스너.css">
+</head>
+<body>
+<div class="alert-title" id="alertTitle">
+    <p id="title">타이틀임</p>
+    <!-- <button onclick="알림창열기닫기('none')">닫기</button> -->
+    <button id="close">닫기</button>
+</div>
+
+<div style="margin-top: 10px;">
+    <button onclick="아이디알림창('block')">버튼1</button>
+    <button onclick="비번알림창('block')">버튼2</button>
+</div>
+
+<script>
+    function 아이디알림창() {
+        document.getElementById('title').innerHTML = '아이디입력하셈';
+        document.getElementById('alertTitle').style.display = 'block';
+    }
+
+    function 비번알림창() {
+        document.getElementById('title').innerHTML = '비번입력하셈';
+        document.getElementById('alertTitle').style.display = 'block';
+    }
+
+    // function 알림창열기닫기(파라미터) {
+    //     document.getElementById('alertTitle').style.display = 파라미터;
+    // }
+
+    // addEventListener('event명', function(){})
+    // function 지정하고 onclick="" 지정하는것을 더 간소화시킴
+    document.getElementById('close').addEventListener('click', function(){
+        document.getElementById('alertTitle').style.display = 'none';
+    });
+</script>
+</body>
+</html>

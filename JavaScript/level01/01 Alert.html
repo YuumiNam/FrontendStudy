@@ -17,8 +17,9 @@
     <button class="alert-button" onclick="alert('block')">열기</button>
     <button class="alert-button" onclick="alert('none')">닫기</button>
     <div>
-        <button class="alert-button" onclick="insert('아이디를 입력하세요')">버튼1</button>
-        <button class="alert-button" onclick="insert('비번을 입력하세요')">버튼2</button>
+        <button class="alert-button" onclick="list('아이디를 입력하세요')">버튼1</button>
+        <button class="alert-button" onclick="list('비번을 입력하세요')">버튼2</button>
+        <button class="alert-button" onclick="listAlert('none')">닫기</button>
     </div>
 
 
@@ -47,9 +48,13 @@
             document.getElementById('alert').style.display = 파라미터;
         }
 
-        function insert(파라미터) {
+        function list(파라미터) {
             document.getElementById('list').style.display = 'block';
             document.getElementById('list').innerHTML = 파라미터;
+        }
+
+        function listAlert(파라미터) {
+            document.getElementById('list').style.display = 파라미터;
         }
     </script>
 </body>

@@ -1,0 +1,10 @@
+.alert-title {
+    width: 100%;
+    max-width: 150px;
+    background-color: skyblue;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+
+    display: none;
+}

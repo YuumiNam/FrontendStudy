@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/05.css">
+</head>
+<body>
+    <script>
+        function 삼육구게임(num) {
+            if(num % 9 == 0) {
+                console.log('짝짝!!');
+            } else if(num % 3 == 0) {
+                console.log('짝!!');
+            } else {
+                console.log('통과!');
+            }
+        }
+        
+        삼육구게임(6);
+        삼육구게임(9);
+        삼육구게임(11);
+    </script>
+
+    <script>
+        function 합격했냐(a, b) {
+            if(a < 40 || b < 40) {
+                console.log('불합격');
+            } else if(a + b >= 120) {
+                console.log('합격');
+            } else {
+                console.log('불합격');
+            }
+        }
+
+        합격했냐(70, 70);
+        합격했냐(30, 100);
+        합격했냐(50, 50);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.white {
+    background-color: white;
+    color: black;
+}
+
+.badge {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 7px 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-dark {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+.btn-light {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}

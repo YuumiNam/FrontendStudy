@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/Dark mode 버튼만들기.css">
+</head>
+<body class="dark">
+    <nav class="">
+        <div class="">
+            <span class="">JSShop</span>
+            <span class="badge btn-dark" id="btn">Dark 🔄</span>
+        </div>
+    </nav>
+
+    <script>
+        var badgeCount = 0;
+
+        document.getElementsByClassName('badge')[0].addEventListener('click', function() {
+            if(badgeCount % 2 == 0) {
+                document.getElementById('btn').innerHTML = 'Light 🔄';
+                document.getElementById('btn').classList.replace('btn-dark', 'btn-light');
+                document.getElementsByClassName('dark')[0].classList.replace('dark', 'white');
+            } else {
+                document.getElementById('btn').innerHTML = 'Dark 🔄';
+                document.getElementById('btn').classList.replace('btn-light', 'btn-dark');
+                document.getElementsByClassName('white')[0].classList.replace('white', 'dark');
+                
+            }
+            
+            badgeCount++;
+            console.log(badgeCount);
+        })
+    </script>
+
+
+    <!-- 변수의 선언, 할당, 범위 -->
+    <script>
+        var 이름; // undefined
+        var 이름 = 'Kim'; // 할당
+        이름 = 'Lee' // 재할당
+
+        function 함수() {
+            var 이름 = 'Kim'; // 함수 안에서 생성되었기 때문에
+            console.log(이름); // 함수 안에서만 작용하는 변수임
+        }
+
+
+        // var let const 차이
+        var a;
+        let b; // 재선언이 불가능, 재할당은 가능
+        const c = 'c'; // 재선언이 불가능, 재할당도 불가능
+    </script>
+</body>
+</html>
