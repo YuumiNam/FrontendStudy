@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/setTimeout 타이머.css">
+</head>
+<body>
+    <div class="">
+        <p class="event-contents">
+            <span class="num">5</span>초 이내 구매시 사은품 증정!
+        </p>
+    </div>
+
+
+    <!-- setTimeout(콜백함수, ms) 함수 -->
+    <!-- 몇초 뒤 일어날 일을 조작할 필요가 있을때 쓴다 -->
+    <script>
+        setTimeout(function(){
+            document.getElementsByClassName('event-contents')[0].style.display = 'none';
+        }, 6000)
+    </script>
+
+    <!-- setInterval(콜백함수, ms) 함수 -->
+    <!-- 몇초 뒤가 아닌 몇초마다 -->
+    <!-- <script>
+        setInterval(function(){
+            console.log('안녕!');
+        },1000)
+    </script> -->
+
+    <script>
+        var count = 5;
+
+        setInterval(function(){
+            count--;
+
+            if(count >= 0) {
+                document.getElementsByClassName('num')[0].innerHTML = count;
+                
+                console.log(count);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
