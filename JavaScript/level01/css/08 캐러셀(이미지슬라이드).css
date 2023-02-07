@@ -4,6 +4,7 @@
     overflow: hidden;
     transition: all 1s;
     position: fixed;
+    z-index: 3;
 }
 
 .show {
@@ -42,7 +43,7 @@
 
 .banner {
     width: 100%;
-    background-color: gray;
+    background-color: rgb(201, 201, 201);
 }
 
 .black-bg {
@@ -51,6 +52,7 @@
     position : fixed;
     background : rgba(0,0,0,0.5);
     padding: 30px;
+    z-index: 5;
 
     /* 애니메이션 효과 줄때 display: none; 대용 */
     visibility: hidden;
@@ -109,4 +111,23 @@
     /* 애니메이션 효과 */
     visibility: hidden;
     opacity: 0;
+}
+
+.slide-container {
+    width: 300vw;
+    transition: all 0.5s;
+}
+
+.slide-box {
+    width: 100vw;
+    float: left;
+}
+.slide-box img {
+    width: 100%;
+}
+
+.slide-btn {
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 900;
 }

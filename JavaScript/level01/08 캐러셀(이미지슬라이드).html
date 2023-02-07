@@ -10,7 +10,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="./css/08 캐러셀(이미지슬라이드).css">
 </head>
-<body class="dark">
+<body class="white">
     <!-- Bootstrap -->
     <script 
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
@@ -20,7 +20,7 @@
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
           <span class="navbar-brand">JSShop</span>
-          <span class="badge btn-dark" id="btn" style="position:absolute; right:90px">Dark 🔄</span>
+          <span class="badge btn-light" id="btn" style="position:absolute; right:90px">Light 🔄</span>
           <button class="navbar-toggler" type="button">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -49,13 +49,13 @@
 
         document.getElementsByClassName('badge')[0].addEventListener('click', function() {
             if(badgeCount % 2 == 0) {
-                document.getElementById('btn').innerHTML = 'Light 🔄';
-                document.getElementById('btn').classList.replace('btn-dark', 'btn-light');
-                document.getElementsByClassName('dark')[0].classList.replace('dark', 'white');
-            } else {
                 document.getElementById('btn').innerHTML = 'Dark 🔄';
                 document.getElementById('btn').classList.replace('btn-light', 'btn-dark');
-                document.getElementsByClassName('white')[0].classList.replace('white', 'dark');
+                // document.getElementsByClassName('dark')[0].classList.replace('dark', 'white');
+            } else {
+                document.getElementById('btn').innerHTML = 'Light 🔄';
+                document.getElementById('btn').classList.replace('btn-dark', 'btn-light');
+                // document.getElementsByClassName('white')[0].classList.replace('white', 'dark');
                 
             }
             
@@ -118,6 +118,41 @@
                 document.getElementsByClassName('black-bg')[0].classList.replace('show-modal', 'close-modal');
             }
         });
+    </script>
+
+    <!-- 캐러셀 -->
+    <div style="overflow:hidden">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="./img/car01.png" alt="car01">
+            </div>
+            <div class="slide-box">
+                <img src="./img/car02.png" alt="car02">
+            </div>
+            <div class="slide-box">
+                <img src="./img/car03.png" alt="car03">
+            </div>
+        </div>
+    </div>
+
+    <div style="margin: 20px; text-align: center;">
+        <button class="slide-btn slide-1">1</button>
+        <button class="slide-btn slide-2">2</button>
+        <button class="slide-btn slide-3">3</button>
+    </div>
+
+    <script>
+        document.getElementsByClassName('slide-1')[0].addEventListener('click', function(){
+            document.getElementsByClassName('slide-container')[0].style.transform = 'translateX(0vw)';
+        })
+
+        document.getElementsByClassName('slide-2')[0].addEventListener('click', function(){
+            document.getElementsByClassName('slide-container')[0].style.transform = 'translateX(-100vw)';
+        })
+
+        document.getElementsByClassName('slide-3')[0].addEventListener('click', function(){
+            document.getElementsByClassName('slide-container')[0].style.transform = 'translateX(-200vw)';
+        })
     </script>
 </body>
 </html>
