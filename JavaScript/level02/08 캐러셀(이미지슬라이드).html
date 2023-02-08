@@ -43,6 +43,8 @@
         })
     </script>
 
+
+
     <!-- Dark mode버튼 -->
     <script>
         var badgeCount = 0;
@@ -63,6 +65,8 @@
             console.log(badgeCount);
         })
     </script>
+
+
 
     <!-- 로그인 -->
     <div class="black-bg">
@@ -120,6 +124,8 @@
         });
     </script>
 
+
+
     <!-- 캐러셀 -->
     <div style="overflow:hidden">
         <div class="slide-container">
@@ -136,22 +142,50 @@
     </div>
 
     <div style="margin: 20px; text-align: center;">
+        <button class="slide-btn before">이전</button>
         <button class="slide-btn slide-1">1</button>
         <button class="slide-btn slide-2">2</button>
         <button class="slide-btn slide-3">3</button>
+        <button class="slide-btn next">다음</button>
     </div>
 
+    <!-- 하지만 이렇게쓰면 사진의 개수를 추가할때마다 코드를 짜야하기때문에 재사용성 면에서는 매우 떨어짐 -->
     <script>
+        var 지금사진 = 0;
+
+        document.getElementsByClassName('before')[0].addEventListener('click', function(){
+            if(지금사진 == 3) {
+                document.getElementsByClassName('slide-container')[0].style.transform = 'translateX(-100vw)';
+                지금사진--;
+            } else if(지금사진 == 2) {
+                document.getElementsByClassName('slide-container')[0].style.transform = 'translateX(0vw)';
+                지금사진--;
+            }
+        })
+
         document.getElementsByClassName('slide-1')[0].addEventListener('click', function(){
             document.getElementsByClassName('slide-container')[0].style.transform = 'translateX(0vw)';
+            지금사진 = 1;
         })
 
         document.getElementsByClassName('slide-2')[0].addEventListener('click', function(){
             document.getElementsByClassName('slide-container')[0].style.transform = 'translateX(-100vw)';
+            지금사진 = 2;
         })
 
         document.getElementsByClassName('slide-3')[0].addEventListener('click', function(){
             document.getElementsByClassName('slide-container')[0].style.transform = 'translateX(-200vw)';
+            지금사진 = 3;
+        })
+
+        document.getElementsByClassName('next')[0].addEventListener('click', function(){
+            if(지금사진 == 1) {
+                document.getElementsByClassName('slide-container')[0].style.transform = 'translateX(-100vw)';
+                지금사진++;
+            } else if(지금사진 == 2) {
+                document.getElementsByClassName('slide-container')[0].style.transform = 'translateX(-200vw)';
+                지금사진++;
+            }
         })
     </script>
 </body>
