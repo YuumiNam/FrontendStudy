@@ -102,7 +102,7 @@
 
     for(let i = 0; i < productsCount; i++ ) {
       document.querySelectorAll('.card-title')[i].innerHTML = products[i].title;
-      document.querySelectorAll('.card-price')[i].innerHTML = products[i].price;
+      document.querySelectorAll('.card-price')[i].innerHTML = '가격 : ' + products[i].price;
     }
   </script>
 
