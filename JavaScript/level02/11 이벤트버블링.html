@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/이벤트버블링.css">
+</head>
+<body>
+    <!-- One-way UI 애니메이션 -->
+    <!-- 1. 시작스타일 -->
+    <!-- 2. 최종스타일 -->
+    <!-- 3. 원할 때 최종스타일로 변하라고 코드짜기 -->
+    <!-- 4. transition 추가 -->
+    <div class="black-bg">
+        <div class="white-bg">
+            <h2 style="margin-bottom: 0px;">로그인하세요</h2>
+            <form action="#">
+                <div class="my-3">
+                    <span><strong>ID : </strong></span>
+                    <input type="text" class="form-control" id="id" placeholder="아이디를 입력해주세요." style="width:77%;">
+                </div>
+                <div class="my-3">
+                    <span><strong>Password : </strong></span>
+                    <input type="text" placeholder="비밀번호를 입력해주세요." id="password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary" id="send">전송</button>
+                <button type="button" class="btn btn-danger" id="close">닫기</button>
+            </form>
+        </div>
+    </div>
+
+    <button class="btn" id="login-btn" style="color:black;">로그인</button>
+
+    <script>
+        document.getElementById('login-btn').addEventListener('click', function(){
+            if(document.getElementsByClassName('black-bg')[0].classList.contains('close-modal')) {
+                document.getElementsByClassName('black-bg')[0].classList.replace('close-modal', 'show-modal');
+            } else {
+                document.getElementsByClassName('black-bg')[0].classList.add('show-modal');
+            }
+        })
+    </script>
+
+    <script>
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementsByClassName('black-bg')[0].classList.replace('show-modal', 'close-modal');
+        })
+    </script>
+
+    <script>
+        document.getElementById('send').addEventListener('click', function(){
+            if(document.getElementById('id').value == '') {
+                alert('아이디입력안함');
+            }
+            if(document.getElementById('password').value == '') {
+                alert('비밀번호입력안함');
+            } else {
+                document.getElementsByClassName('black-bg')[0].classList.replace('show-modal', 'close-modal');
+            }
+        });
+    </script>
+
+    <!-- input과 change 이벤트 -->
+    <!-- input은 안에 글자에 변화가 일어날때마다 변화를 줌 -->
+    <!-- change는 input안에 글자를 다 치고 다른 곳을 클릭할때 변화를 줌 -->
+    <!-- <script>
+        document.getElementById('id').addEventListener('input', function() {
+
+        })
+    </script> -->
+
+
+
+
+
+
+    <!-- 검은배경 누르면 모달창 닫는 기능 -->
+    <!-- <script>
+        document.getElementsByClassName('black-bg')[0].addEventListener('click', function(){
+            document.getElementsByClassName('black-bg')[0].classList.replace('show-modal', 'close-modal');
+        })
+    </script> -->
+
+    <!-- 위의 기능을 구현했을때의 문제점 (이벤트버블링) -->
+    <!-- 검은배경이 아닌 흰배경의 로그인 창을 눌러도 페이지가 닫힘 -->
+    <!-- 겹쳐있기 때문인데 이것을 '이벤트버블링'이라고 한다 -->
+    <script>
+        document.getElementsByClassName('black-bg')[0].addEventListener('click', function(e){
+            // // 유저가 실제로 클릭한 클래스
+            // e.target;
+
+            // // 이벤트리스너가 달린 곳 (this)
+            // e.currentTarget;
+            // this
+
+            // // ('click'을 줬을시에) 클릭 안한것처럼 막아주세요
+            // e.preventDefault();
+
+            // // 내 상위요소로 이벤트 버블링 막아줌
+            // e.stopPropagation();
+
+
+
+            // 우리가 필요한 기능은
+            // "내가 실제로 큵릭한것이 검은색 배경이면 모달창 닫아주세요~"
+            if(e.target == document.querySelector('.black-bg')) {
+                document.getElementsByClassName('black-bg')[0].classList.replace('show-modal', 'close-modal');
+            }
+        })
+    </script>
+</body>
+</html>
