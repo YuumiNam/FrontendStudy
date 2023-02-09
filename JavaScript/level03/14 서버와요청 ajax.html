@@ -53,7 +53,42 @@ crossorigin="anonymous"></script>
 </script>
 
 
+<script>
+    // 숫자 오름차순 정렬하는법
+    // array변수.sort(function(a, b) {
+    //     return a - b;
+    // })
+
+    // 숫자 내림차순 정렬하는법
+    // array변수.sort(function(a, b) {
+    //     return b - a;
+    // })
+
+    // 문자 가나다순 정렬하는법
+    // array변수.sort()
+
+    // let 어레이 = [7, 3, 5, 2, 40];
+    // 어레이.sort(function(a, b) {
+    //     return a - b;
+    // });
+    // console.log(어레이);
+
+    // array자료 원하는 것만 필터하기
+    // 변수를 새로 지정해줘야함
+    // let 새어레이 = 어레이.filter(function(a) {
+    //     return a < 4;
+    // })
+
+    // array자료 전부 변형하기
+    // let 새어레이 = 어레이.map(function(a) {
+    //     return a * 4;
+    // })
+</script>
+
+
 <div class="container">
+    <button class="btn btn-danger" style="margin: 10px; margin-left: 0px;">가격순정렬</button>
+
     <div class="row">
         <!-- 이렇게 하드코딩 말고 자바스크립트로 만들어보기!! -->
         <!-- <div class="col-sm-4">
@@ -96,12 +131,23 @@ crossorigin="anonymous"></script>
     ];
 
     카드불러오기(products);
+
+    // 가격순정렬
+    document.getElementsByClassName('btn')[0].addEventListener('click', function(){
+        products.sort(function(a, b) {
+            return a.price - b.price;
+        })
+        console.log(products);
+
+        document.getElementsByClassName('row')[0].innerHTML = '';
+        카드불러오기(products);
+    })
 </script>
 
 
 <script>
     // 더보기 한번 눌렀을 때 상품 가져오기
-    document.getElementsByClassName('btn')[0].addEventListener('click', function(){
+    document.getElementsByClassName('btn')[1].addEventListener('click', function(){
         clickCount++;
 
         fetch('https://codingapple1.github.io/js/more' + clickCount + '.json')
@@ -111,10 +157,11 @@ crossorigin="anonymous"></script>
         
             카드불러오기(data);
         }).catch(function(error) {
-            document.getElementsByClassName('btn')[0].style.display = 'none';
+            document.getElementsByClassName('btn')[1].style.display = 'none';
         })
     })
 </script>
+
 
 </body>
 </html>
