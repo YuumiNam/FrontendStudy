@@ -1,0 +1,13 @@
+.box-style {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
