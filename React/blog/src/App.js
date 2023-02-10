@@ -34,16 +34,36 @@ function App() {
   // 변수가 가변적이면 값이 바뀔때마다 일일이 값을 바꿔줘야함 
   // -> 변동시 자동으로 html에 반영되게 만들고싶으면 state쓰셈
   let [글제목, 글제목변경 ] = useState(['남자코트 추천', '여자코트 추천', '강남우동 맛집' ]);
-  let [따봉, 따봉변경 ] = useState(0);
+  let [따봉, 따봉변경 ] = useState([0, 0, 0]);
 
+  let [modal, setModal] = useState('닫힘');
+
+
+
+  // array를 반복문에 활용하기
+  /*
+  [1,2,3].map(function(a)) {
+    console.log(1); // array자료 개수만큼 1 출력
+    console.log(a); // 함수의 파라미터 a는 array안에 있는 자료임
+
+    return '123'  // return에 뭐 적으면 array로 담아줌 => [123, 123, 123]
+  }
+
+  */
 
 
   return (
     <div className="App">
       <div className="black-nav">
-        <h4 style={{color: 'white', fontSize: '16px' } }>ReactBlog</h4>
+        <h4 style={{color: 'white', fontSize: '16px', cursor: 'pointer' } } 
+          onClick={() => {if(modal == '닫힘') {setModal('열림')}
+            else {setModal('닫힘')}} }>ReactBlog</h4>
       </div>
-      <div className="list">
+
+
+
+      {/* 반복문으로 축약 */}
+      {/* <div className="list">
         <h4>{글제목[0] } <span style={{cursor: 'pointer' } } onClick={() => {따봉변경(따봉++) } }>👍</span> {따봉 } </h4>
         <p>2월 17일 발행</p>
       </div>
@@ -56,7 +76,26 @@ function App() {
       <div className="list">
         <h4>{글제목[2] }</h4>
         <p>2월 17일 발행</p>
-      </div>
+      </div> */}
+      
+      {
+        // 반복문 (html중간에 반복문을 쓰려면 map()함수를 활용하자)
+        글제목.map(function(a, i){
+          return (
+            <div className="list" key={i }>
+              <h4>{글제목[i] } 
+                <span 
+                  style={{cursor: 'pointer' } } 
+                  onClick={() => {let copy = [...따봉]; copy[i]++; 따봉변경(copy) } 
+                  }>👍</span> {따봉[i] }
+              </h4>
+              <p>2월 17일 발행</p>
+            </div>
+          )
+        })
+      }
+
+
 
       <button className='btn' onClick={() => {
         // 원본은 보존
@@ -76,8 +115,18 @@ function App() {
           글제목변경(copy);
          } }>가나다순정렬</button>
 
+      
 
-      <Modal></Modal>
+      {/* 동적인 UI 만드는 step */}
+      {/* 1. html css로 미리 디자인완성 */}
+      {/* 2. UI의 현재 상태를 state로 저장 */}
+      {/* 3. state에 따라 UI가 어떻게 보일지 작성 */}
+      {
+        // 삼항연산자 (html중간에 조건문을 쓰려면 삼항연산자를 활용하자)
+        // 조건식 ? 참일때실행할코드 : 거짓일때실행할코드
+        modal == '열림' ? <Modal></Modal> : null
+      }
+
     </div>
   );
 }
