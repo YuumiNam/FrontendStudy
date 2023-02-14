@@ -4,11 +4,11 @@ import {Navbar, Container, Nav} from 'react-bootstrap';
 import './App.css';
 import {useEffect, useState} from 'react';
 import data from './data.js';
-import {Routes, Route, Link, useParams, useNavigate} from 'react-router-dom';
+import {Routes, Route, Link, useParams, useNavigate, Outlet} from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 
-function ShoesList(props) {
+function Card(props) {
 
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ function ShoesList(props) {
   )
 }
 
-function MainPage() {
+function ShoesList(props) {
   return (
     <>
       <div className='main-bg'></div>
@@ -35,9 +35,9 @@ function MainPage() {
       <div className="container">
         <div className="row">
           {
-            data.map(function(a, i) {
+            props.shoes.map(function(a, i) {
               return (
-                <ShoesList shoes={a} i={i} key={i}></ShoesList>
+                <Card shoes={a} i={i} key={i}></Card>
               )
             })
           }
@@ -99,9 +99,19 @@ function SecondPage(props) {
   )
 }
 
+function About() {
+  return(
+    <div>
+      <h4>회사정보임</h4>
+      <Outlet></Outlet>
+    </div>
+  )
+}
+
 function App() {
 
   let [shoes, setShoes] = useState(data);
+  let [count, setCount] = useState(2);
 
   return (
     <div className="App">
@@ -121,24 +131,40 @@ function App() {
 
       <Routes>
         <Route path='/' element={
-            <MainPage></MainPage>
+            <ShoesList shoes={shoes}></ShoesList>
           }> 
         </Route>
         <Route path='/detail/:id' element={
           <SecondPage shoes={shoes}></SecondPage>
         }></Route>
+        <Route path='about' element={<About></About>}>
+          <Route path="member" element={<div>멤버임</div>}></Route>
+          <Route path="location" element={<div>장소임</div>}></Route>
+        </Route>
+        <Route path='*' element={
+          <div>없는페이지에요</div>
+        }></Route>
       </Routes>
 
       {/* AJAX AXIOS */}
+      {/* Promise.all([get1, get2]) 동시에 여러개의 GET요청 */}
       <button onClick={() => {
-        axios.get('https://codingapple1.github.io/shop/data2.json')
+        axios.get('https://codingapple1.github.io/shop/data'+ count +'.json')
           .then((결과) => {
+            // console.log(shoes.data);
             console.log(결과.data);
+
+            // 기존 shoes에 데이터 추가
+            let copy = [...shoes, ...결과.data];
+            count += 1;
+
+            setShoes(copy);
+            setCount(count);
           })
           .catch(() => {
             console.log('실패함ㅅㄱ');
           })
-      }}>버튼</button>
+      }}>더보기</button>
     </div>
   );
 }
